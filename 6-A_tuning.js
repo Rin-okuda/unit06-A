@@ -10,6 +10,7 @@ const CONFIG = {
   FALL_GRAVITY_RATE: 1.5,//現実の重力と同じ
 };
 
+const BOUNCE=0.30;
 const TARGET_HEIGHT = 64;   // 目印の線の高さ（床から64px＝キャラ2つ分）。ぶつからない
 
 const player = { x: 80, y: 20, w: 32, h: 32, vy: 0, isGrounded: false, jumpsLeft: CONFIG.MAX_JUMPS };
@@ -31,7 +32,7 @@ document.addEventListener("keyup", (e) => {
 function collideWithFloor() {
   if (player.y + player.h > floor.y) {
     player.y = floor.y - player.h;
-    player.vy = 0;
+    player.vy = -player.vy * BOUNCE;
     player.isGrounded = true;
     player.jumpsLeft = CONFIG.MAX_JUMPS;   // 着地したら、跳べる回数を元に戻す
   } else {
