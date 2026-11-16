@@ -9,8 +9,8 @@ const CONFIG = {
   MAX_JUMPS: 2,
   FALL_GRAVITY_RATE: 1.5,
 
-  WALL_JUMP_X: 350,   // 壁ジャンプ時の横速度
-  WALL_JUMP_Y: 600    // 壁ジャンプ時の上速度
+  WALL_JUMP_X: 900,   // 壁ジャンプ時の横速度
+  WALL_JUMP_Y: 800    // 壁ジャンプ時の上速度
 };
 
 const BOUNCE = 0.30;
